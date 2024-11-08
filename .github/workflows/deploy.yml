@@ -19,7 +19,7 @@ jobs:
             keep_files: true
             destination_dir: ./v${{ github.ref_name }}
         - name: Artifact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
            name: Site
            path: ${{ secrets.TOKEN }}/${{ github.repository }}/v${{ github.run_number }}/
