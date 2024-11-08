@@ -18,3 +18,8 @@ jobs:
             publish_branch: gh-pages
             keep_files: true
             destination_dir: ./v${{ github.ref_name }}
+        - name: Artifact
+          uses: actions/upload-artifact@v2
+          with:
+           name: Site
+           path: ${{ secrets.TOKEN }}/${{ github.repository }}/v${{ github.run_number }}/
