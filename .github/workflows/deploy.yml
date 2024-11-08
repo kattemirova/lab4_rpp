@@ -23,8 +23,7 @@ jobs:
           with:
            name: Site
            path: .
-        - name: Generate Link
-          run: |
-           echo "Site link: https://${{ github.repository_owner }}.github.io/${{ github.repository }}/v${{ github.ref_name }}"
+           run: |
+             echo "https://${{ github.repository_owner }}.github.io/${{ github.repository }}/v${{ github.ref_name }}"
 
          
