@@ -1,0 +1,17 @@
+name: Deploy Multilingual Site
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4 
+          with:
+            publish_dir: ./_site
+            publish_branch: gh-pages
+            destination_dir: /v${{ github.ref_name }}
+            keep_files: true
