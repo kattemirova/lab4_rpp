@@ -14,4 +14,3 @@ jobs:
             publish_dir: ./_site
             publish_branch: gh-pages
             destination_dir: /v${{ github.ref_name }}
-            keep_files: true
