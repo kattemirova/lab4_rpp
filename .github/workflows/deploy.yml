@@ -11,12 +11,13 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2 
         - name: Create Pages
+          uses: JamesIves/github-pages-deploy-action@v4
           with:
             branch: gh-pages
         - name: Deploy to GitHub Pages
           uses: peaceiris/actions-gh-pages@v4
           with:
-            publish_dir: ./
+            publish_dir: /
             publish_branch: gh-pages
             keep_files: true
             destination_dir: /v${{ github.ref_name }}
