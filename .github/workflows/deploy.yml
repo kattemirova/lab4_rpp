@@ -8,10 +8,12 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
         - name: Deploy to GitHub Pages
           uses: peaceiris/actions-gh-pages@v4
           with:
-            publish_dir: /
+            publish_dir: .
             publish_branch: gh-pages
             keep_files: true
             destination_dir: /v${{ github.ref_name }}
