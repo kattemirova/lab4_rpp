@@ -23,4 +23,8 @@ jobs:
           with:
            name: Site
            path: .
-           run: echo "${{ secrets.TOKEN }}/${{ github.repository }}/v${{ github.run_number }}/"
+        - name: Generate Link
+          run: |
+           echo "Site link: https://${{ github.repository_owner }}.github.io/${{ github.repository }}/v${{ github.ref_name }}"
+
+         
