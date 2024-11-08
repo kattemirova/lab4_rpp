@@ -11,7 +11,6 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2 
         - name: Create Pages
-          uses: EndBug/add-or-update-branch@v1
           with:
             branch: gh-pages
         - name: Deploy to GitHub Pages
