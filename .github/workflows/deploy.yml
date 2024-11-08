@@ -21,9 +21,9 @@ jobs:
             publish_branch: gh-pages
             keep_files: true
             destination_dir: /v${{ github.ref_name }}
-        - name: Сохранение ссылки как артефакта
-          uses: actions/upload-artifact@v2
+        - name: Artifact
+          uses: actions/upload-artifact@v4
           with:
-           name: сайт-ссылка
-           path: ${{ secrets.TOKEN }}/${{ github.repository }}/v${{ github.run_number }}/
-
+           name: Site
+           path: ./v${{ github.ref_name }}
+           run: echo "${{ secrets.TOKEN }}/${{ github.repository }}/v${{ github.run_number }}/"
